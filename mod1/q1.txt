@@ -1,0 +1,13 @@
+user@vishal-virtualbox:~/Desktop$ cd /home/user/Desktop
+user@vishal-virtualbox:~/Desktop$ cd /home/user/Desktop/Mod1
+user@vishal-virtualbox:~/Desktop/Mod1$ touch file1
+user@vishal-virtualbox:~/Desktop/Mod1$ ls
+file1
+user@vishal-virtualbox:~/Desktop/Mod1$ ls -l
+total 0
+-rw-rw-r-- 1 user user 0 Jan 28 00:21 file1
+user@vishal-virtualbox:~/Desktop/Mod1$ chmod +775 file1
+user@vishal-virtualbox:~/Desktop/Mod1$ ls -l
+total 0
+-rwxrwxr-x 1 user user 0 Jan 28 00:21 file1
+user@vishal-virtualbox:~/Desktop/Mod1$ 

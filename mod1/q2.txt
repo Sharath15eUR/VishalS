@@ -1,0 +1,9 @@
+user@vishal-virtualbox:~/Desktop/Mod1$ touch file2
+user@vishal-virtualbox:~/Desktop/Mod1$ ls
+file1  file2
+user@vishal-virtualbox:~/Desktop/Mod1$ ls -l file2
+-rw-rw-r-- 1 user user 0 Jan 28 00:32 file2
+user@vishal-virtualbox:~/Desktop/Mod1$ chmod g-w file2
+user@vishal-virtualbox:~/Desktop/Mod1$ ls -l file2
+-rw-r--r-- 1 user user 0 Jan 28 00:32 file2
+user@vishal-virtualbox:~/Desktop/Mod1$ 

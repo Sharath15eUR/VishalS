@@ -1,0 +1,12 @@
+user@vishal-virtualbox:~$ mkdir -p dir1
+user@vishal-virtualbox:~$ cd dir1
+user@vishal-virtualbox:~/dir1$ touch ex1 ex2 ex3
+user@vishal-virtualbox:~/dir1$ ls -lt > output
+user@vishal-virtualbox:~/dir1$ cat output
+total 0
+-rw-rw-r-- 1 user user 0 Jan 28 01:07 output
+-rw-rw-r-- 1 user user 0 Jan 28 01:05 ex1
+-rw-rw-r-- 1 user user 0 Jan 28 01:05 ex2
+-rw-rw-r-- 1 user user 0 Jan 28 01:05 ex3
+user@vishal-virtualbox:~/dir1$ 
+
