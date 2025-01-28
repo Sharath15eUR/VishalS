@@ -1,0 +1,5 @@
+user@vishal-virtualbox:/$ cd /home/user/Downloads
+user@vishal-virtualbox:~/Downloads$ find -type f -size +1M > output.txt
+user@vishal-virtualbox:~/Downloads$ cat output.txt
+./pexels-eberhardgross-1624496.jpg
+user@vishal-virtualbox:~/Downloads$ 

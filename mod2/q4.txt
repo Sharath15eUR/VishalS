@@ -1,0 +1,31 @@
+user@vishal-virtualbox:~/Desktop$ vim high_memory.sh
+user@vishal-virtualbox:~/Desktop$ chmod +x high_memory.sh
+user@vishal-virtualbox:~/Desktop$ ./high_memory.sh
+Process with highest memory usage:
+   9951 10.9 /snap/firefox/4793/usr/lib/firefox/firefox
+Do you want to terminate this process? (y/n): y
+Process with PID 9951 has been terminated.
+
+user@vishal-virtualbox:~/Desktop$ cat high_memory.sh
+#!/bin/bash
+
+# Find the process with the highest memory usage
+highest_mem_process=$(ps --sort=-%mem -eo pid,%mem,command | head -n 2 | tail -n 1)
+
+# Extract the PID of the process
+pid=$(echo "$highest_mem_process" | awk '{print $1}')
+
+# Display the process details to the user
+echo "Process with highest memory usage:"
+echo "$highest_mem_process"
+
+# Confirm before terminating
+read -p "Do you want to terminate this process? (y/n): " confirmation
+if [[ "$confirmation" == "y" ]]; then
+    # Kill the process
+    kill -9 "$pid"
+    echo "Process with PID $pid has been terminated."
+else
+    echo "Operation canceled."
+fi
+user@vishal-virtualbox:~/Desktop$
