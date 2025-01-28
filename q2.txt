@@ -1,0 +1,12 @@
+user@vishal-virtualbox:~/Desktop$ vim config.txt
+user@vishal-virtualbox:~/Desktop$ cat config.txt
+localhost 123
+localohsog l1
+localhost
+
+user@vishal-virtualbox:~/Desktop$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+user@vishal-virtualbox:~/Desktop$ cat updated_config.txt
+127.0.0.1 123
+localohsog l1
+127.0.0.1
+
