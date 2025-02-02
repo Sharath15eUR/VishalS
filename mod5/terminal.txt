@@ -1,0 +1,33 @@
+user@vishal-virtualbox:~/Desktop/mod5$ nano file_analyzer.sh
+user@vishal-virtualbox:~/Desktop/mod5$ chmod +x file_analyzer.sh
+user@vishal-virtualbox:~/Desktop/mod5$ ./file_analyzer.sh -f input.txt -k Am
+Found match in: input.txt
+Lines containing keyword:
+Am I a praise poet or a blame poet?
+-------------------
+user@vishal-virtualbox:~/Desktop/mod5$ ./file_analyzer.sh -f input.txt -k Today
+Found match in: input.txt
+Lines containing keyword:
+Today I am a blame poet.
+-------------------
+user@vishal-virtualbox:~/Desktop/mod5$ ./file_analyzer.sh -f input1.txt -k Today[ERROR] 2025-02-02 22:18:13 - Cannot access file: input1.txt
+user@vishal-virtualbox:~/Desktop/mod5$ ./file_analyzer.sh -f input.txt -k "Am@#"
+[ERROR] 2025-02-02 22:19:11 - Invalid keyword format: Am@#
+user@vishal-virtualbox:~/Desktop/mod5$ ./file_analyzer.sh -f input.txt 
+[ERROR] 2025-02-02 22:19:21 - Keyword is required
+File Analyzer - Search for keywords in files
+Usage:
+    ./file_analyzer.sh -d <directory> -k <keyword>
+    ./file_analyzer.sh -f <file> -k <keyword>
+    ./file_analyzer.sh --help
+Options:
+    -d <directory>  Directory to search recursively
+    -k <keyword>    Keyword to search for
+    -f <file>       Specific file to search in
+    --help          Display this help menu
+Example:
+    ./file_analyzer.sh -d logs -k error
+    ./file_analyzer.sh -f script.sh -k TODO
+user@vishal-virtualbox:~/Desktop/mod5$ ./file_analyzer.sh -f input.txt -k man
+No matches found in: input.txt
+user@vishal-virtualbox:~/Desktop/mod5$ 
