@@ -1,0 +1,56 @@
+How to Connect to a Remote Machine via SSH and Telnet Using a Terminal
+
+SSH is a secure way to remotely access a machine over an encrypted connection.
+Method 1: SSH (Secure Shell) 
+
+Step 1: Install SSH 
+On the remote machine, install the OpenSSH Server:
+sudo apt install -y openssh-server
+
+Start and enable the SSH service:
+
+sudo systemctl start ssh
+sudo systemctl enable ssh
+
+Check if the SSH service is running:
+systemctl status ssh
+
+Step 2: Find the Remote Machine's IP Address
+On the remote machine, run:
+ip a
+
+Example output:
+inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0
+The IP address is 192.168.1.100.
+
+Step 3: Connect to the Remote Machine via SSH
+On your local machine, run:
+ssh <username>@<remote_ip>
+
+Example:
+ssh user@192.168.1.100
+If connecting for the first time, type "yes" to accept the connection.
+Once connected, you will have terminal access to the remote machine.
+
+
+Method 2: Telnet 
+Telnet is an older protocol for remote access but lacks encryption, making it insecure.
+
+Step 1: Install Telnet Server (on Remote Machine)
+
+sudo apt install -y telnetd
+
+Start and enable the Telnet service:
+
+sudo systemctl start inetd
+sudo systemctl enable inetd
+
+Step 2: Connect to the Remote Machine via Telnet
+
+On your local machine, run:
+
+telnet <remote_ip>
+
+Example:
+telnet 192.168.1.100
+You will be prompted for a username and password. Enter them to access the remote machine.

@@ -1,0 +1,50 @@
+user@vishal-virtualbox:~$ sudo tcpdump -i enp0s3
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+16:47:18.109984 IP vishal-virtualbox.38973 > 10.0.2.3.domain: 46303+ [1au] A? connectivity-check.ubuntu.com. (58)
+16:47:18.128538 IP 10.0.2.3.domain > vishal-virtualbox.38973: 46303 12/0/1 A 185.125.190.18, A 91.189.91.49, A 185.125.190.49, A 185.125.190.17, A 91.189.91.97, A 185.125.190.98, A 91.189.91.48, A 91.189.91.96, A 185.125.190.96, A 185.125.190.48, A 91.189.91.98, A 185.125.190.97 (250)
+16:47:18.129610 IP vishal-virtualbox.42248 > is-content-cache-2.ps5.canonical.com.http: Flags [S], seq 221068280, win 64240, options [mss 1460,sackOK,TS val 3629382209 ecr 0,nop,wscale 7], length 0
+16:47:18.146909 IP vishal-virtualbox.59112 > 10.0.2.3.domain: 21832+ [1au] PTR? 3.2.0.10.in-addr.arpa. (50)
+16:47:18.150930 IP 10.0.2.3.domain > vishal-virtualbox.59112: 21832 NXDomain 0/1/1 (127)
+16:47:18.151467 IP vishal-virtualbox.39114 > 10.0.2.3.domain: 10082+ [1au] PTR? 15.2.0.10.in-addr.arpa. (51)
+16:47:18.154984 IP 10.0.2.3.domain > vishal-virtualbox.39114: 10082 NXDomain 0/1/1 (128)
+16:47:18.155581 IP vishal-virtualbox.39743 > 10.0.2.3.domain: 21819+ [1au] PTR? 18.190.125.185.in-addr.arpa. (56)
+16:47:18.297194 IP is-content-cache-2.ps5.canonical.com.http > vishal-virtualbox.42248: Flags [S.], seq 2054784001, ack 221068281, win 65535, options [mss 1460], length 0
+16:47:18.297224 IP vishal-virtualbox.42248 > is-content-cache-2.ps5.canonical.com.http: Flags [.], ack 1, win 64240, length 0
+16:47:18.298081 IP vishal-virtualbox.42248 > is-content-cache-2.ps5.canonical.com.http: Flags [P.], seq 1:89, ack 1, win 64240, length 88: HTTP: GET / HTTP/1.1
+16:47:18.299868 IP is-content-cache-2.ps5.canonical.com.http > vishal-virtualbox.42248: Flags [.], ack 89, win 65535, length 0
+16:47:18.314670 IP 10.0.2.3.domain > vishal-virtualbox.39743: 21819 1/0/1 PTR is-content-cache-2.ps5.canonical.com. (106)
+16:47:18.468734 IP is-content-cache-2.ps5.canonical.com.http > vishal-virtualbox.42248: Flags [P.], seq 1:190, ack 89, win 65535, length 189: HTTP: HTTP/1.1 204 No Content
+16:47:18.468734 IP is-content-cache-2.ps5.canonical.com.http > vishal-virtualbox.42248: Flags [F.], seq 190, ack 89, win 65535, length 0
+16:47:18.468760 IP vishal-virtualbox.42248 > is-content-cache-2.ps5.canonical.com.http: Flags [.], ack 190, win 64051, length 0
+16:47:18.469081 IP vishal-virtualbox.42248 > is-content-cache-2.ps5.canonical.com.http: Flags [F.], seq 89, ack 191, win 64051, length 0
+16:47:18.469745 IP is-content-cache-2.ps5.canonical.com.http > vishal-virtualbox.42248: Flags [.], ack 90, win 65535, length 0
+16:47:23.296838 ARP, Request who-has 10.0.2.3 tell vishal-virtualbox, length 28
+16:47:23.297305 ARP, Reply 10.0.2.3 is-at 52:55:0a:00:02:03 (oui Unknown), length 50
+^C
+20 packets captured
+20 packets received by filter
+0 packets dropped by kernel
+user@vishal-virtualbox:~$ sudo tcpdump
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+16:48:44.254722 IP vishal-virtualbox.57890 > 93.243.107.34.bc.googleusercontent.com.https: Flags [P.], seq 1370228503:1370228533, ack 1836673155, win 63087, length 30
+16:48:44.255135 IP 93.243.107.34.bc.googleusercontent.com.https > vishal-virtualbox.57890: Flags [.], ack 30, win 65535, length 0
+16:48:44.278120 IP vishal-virtualbox.34837 > 10.0.2.3.domain: 46521+ [1au] PTR? 93.243.107.34.in-addr.arpa. (55)
+16:48:44.295219 IP 10.0.2.3.domain > vishal-virtualbox.34837: 46521 1/0/1 PTR 93.243.107.34.bc.googleusercontent.com. (107)
+16:48:44.295722 IP vishal-virtualbox.44354 > 10.0.2.3.domain: 21679+ [1au] PTR? 15.2.0.10.in-addr.arpa. (51)
+16:48:44.300408 IP 10.0.2.3.domain > vishal-virtualbox.44354: 21679 NXDomain 0/1/1 (128)
+16:48:44.385326 IP vishal-virtualbox.46940 > 10.0.2.3.domain: 17783+ [1au] PTR? 3.2.0.10.in-addr.arpa. (50)
+16:48:44.389168 IP 10.0.2.3.domain > vishal-virtualbox.46940: 17783 NXDomain 0/1/1 (127)
+16:48:49.313844 ARP, Request who-has 10.0.2.3 tell vishal-virtualbox, length 28
+16:48:49.314080 ARP, Request who-has _gateway tell vishal-virtualbox, length 28
+16:48:49.314478 ARP, Reply 10.0.2.3 is-at 52:55:0a:00:02:03 (oui Unknown), length 50
+16:48:49.314488 ARP, Reply _gateway is-at 52:55:0a:00:02:02 (oui Unknown), length 50
+16:48:49.377130 IP vishal-virtualbox.32872 > 10.0.2.3.domain: 63783+ [1au] PTR? 2.2.0.10.in-addr.arpa. (50)
+16:48:49.393747 IP 10.0.2.3.domain > vishal-virtualbox.32872: 63783 NXDomain 0/1/1 (127)
+^C
+14 packets captured
+14 packets received by filter
+0 packets dropped by kernel
+user@vishal-virtualbox:~$ 
+

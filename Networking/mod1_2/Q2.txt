@@ -1,0 +1,48 @@
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ sudo apt install vsftpd -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+vsftpd is already the newest version (3.0.5-0ubuntu3.1).
+The following packages were automatically installed and are no longer required:
+  linux-headers-6.8.0-51 linux-headers-6.8.0-51-generic linux-image-6.8.0-51-generic linux-modules-6.8.0-51-generic linux-modules-extra-6.8.0-51-generic linux-tools-6.8.0-51
+  linux-tools-6.8.0-51-generic
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 9 not upgraded.
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ sudo nano /etc/vsftpd.conf
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ sudo systemctl start vsftpd
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ sudo systemctl enable vsftpd
+Synchronizing state of vsftpd.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable vsftpd
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ sudo ftp localhost
+Connected to localhost.
+220 (vsFTPd 3.0.5)
+Name (localhost:user): user
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> put hello.txt
+local: hello.txt remote: hello.txt
+ftp: Can't open `hello.txt': No such file or directory
+ftp> put Q1.txt
+local: Q1.txt remote: Q1.txt
+229 Entering Extended Passive Mode (|||10469|)
+150 Ok to send data.
+100% |*******************************************************************************************************************************************|  2007      593.74 KiB/s    00:00 ETA
+226 Transfer complete.
+2007 bytes sent in 00:00 (266.47 KiB/s)
+ftp> get q1.txt
+local: q1.txt remote: q1.txt
+229 Entering Extended Passive Mode (|||25050|)
+550 Failed to open file.
+ftp> get Q1.txt
+local: Q1.txt remote: Q1.txt
+229 Entering Extended Passive Mode (|||19204|)
+150 Opening BINARY mode data connection for Q1.txt (2007 bytes).
+100% |*******************************************************************************************************************************************|  2007        5.30 MiB/s    00:00 ETA
+226 Transfer complete.
+2007 bytes received in 00:00 (564.17 KiB/s)
+ftp> exit
+221 Goodbye.
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ 

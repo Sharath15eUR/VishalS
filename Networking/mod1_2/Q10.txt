@@ -1,0 +1,20 @@
+Q10 - How a DHCP Server Assigns IP Addresses
+
+1) Device Requests an IP (DHCP Discovery)
+
+    When a device connects to a network, it broadcasts a request for an IP address.
+    This request is called a DHCPDISCOVER message.
+
+2) DHCP Server Offers an IP (DHCP Offer)
+
+    The DHCP server responds with a DHCPOFFER message.
+    This message contains an available IP address, subnet mask, gateway, and lease time.
+
+3) Device Accepts the IP (DHCP Request)
+
+    The device replies with a DHCPREQUEST message, confirming it wants the offered IP.
+
+4) DHCP Server Confirms (DHCP Acknowledgment)
+
+    The server sends a DHCPACK (Acknowledgment) message, officially assigning the IP.
+    The device can now use this IP to communicate on the network.

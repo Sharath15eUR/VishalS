@@ -1,0 +1,31 @@
+Q8 - Check iwconfig/ifconfig to understand in detail about network interfaces 
+
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fd00::c08b:b6:fca8:247b  prefixlen 64  scopeid 0x0<global>
+        inet6 fd00::a00:27ff:fe68:dd9f  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::a00:27ff:fe68:dd9f  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:68:dd:9f  txqueuelen 1000  (Ethernet)
+        RX packets 49559  bytes 40551479 (40.5 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 26368  bytes 12925479 (12.9 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 6192  bytes 625125 (625.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6192  bytes 625125 (625.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ iwconfig
+lo        no wireless extensions.
+
+enp0s3    no wireless extensions.
+
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ 
+
+

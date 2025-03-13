@@ -1,0 +1,21 @@
+Q7 - Check your default gateway is reachable or not 
+
+
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ ip route | grep default
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ ping 10.0.2.2
+PING 10.0.2.2 (10.0.2.2) 56(84) bytes of data.
+64 bytes from 10.0.2.2: icmp_seq=1 ttl=255 time=0.488 ms
+64 bytes from 10.0.2.2: icmp_seq=2 ttl=255 time=0.377 ms
+64 bytes from 10.0.2.2: icmp_seq=3 ttl=255 time=0.383 ms
+64 bytes from 10.0.2.2: icmp_seq=4 ttl=255 time=0.474 ms
+64 bytes from 10.0.2.2: icmp_seq=5 ttl=255 time=0.479 ms
+64 bytes from 10.0.2.2: icmp_seq=6 ttl=255 time=0.644 ms
+64 bytes from 10.0.2.2: icmp_seq=7 ttl=255 time=0.490 ms
+^C
+--- 10.0.2.2 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6158ms
+rtt min/avg/max/mdev = 0.377/0.476/0.644/0.081 ms
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ 
+
+

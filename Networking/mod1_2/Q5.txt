@@ -1,0 +1,24 @@
+What Happens When Duplicate IPs Are Configured in a Network?
+
+When two devices on the same network have the same IP address, it creates a conflict, leading to connectivity issues. Here’s what happens:
+1. Network Instability
+    The devices with duplicate IPs compete for network communication.
+    One device may work while the other disconnects or gets intermittent access.
+
+2. ARP Conflicts 
+    Devices use ARP to find the MAC address for an IP.
+    If two devices respond with different MAC addresses for the same IP, the ARP table gets confused, causing misdirected traffic.
+
+3. Connection Drops & Errors
+    You might see errors like "IP address conflict detected" on Windows, Linux, or macOS.
+    Some devices might automatically disable their network connection to avoid conflicts.
+
+4. Issues in Servers & Critical Systems
+    If a server has a duplicate IP, clients trying to connect may get wrong responses or fail to access the service.
+    Load balancers, databases, and file servers may face major service disruptions.
+
+How to Fix It?
+    Use DHCP (Dynamic Host Configuration Protocol) – It assigns unique IPs automatically.
+    Check ARP Table – Run arp -a to check conflicting IPs.
+    Manually Reconfigure IPs – Change one device’s IP to avoid duplication.
+    Use IP Reservation – Configure the router to assign fixed IPs to important devices.

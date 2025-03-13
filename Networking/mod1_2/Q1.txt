@@ -1,0 +1,30 @@
+--------------------------------------BY USING SCP COMMAND-----------------------------------------------------------------------------
+
+user@vishal-virtualbox:~/Desktop/networking$ sudo systemctl start ssh
+user@vishal-virtualbox:~/Desktop/networking$ sudo systemctl enable ssh
+Synchronizing state of ssh.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable ssh
+Created symlink /etc/systemd/system/sshd.service → /usr/lib/systemd/system/ssh.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/ssh.service → /usr/lib/systemd/system/ssh.service.
+user@vishal-virtualbox:~/Desktop/networking$ scp -r hello user@localhost:/home/user/Desktop
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is SHA256:RQaVlITDAcOBzqerb+8HbRQZnltt0rNtN6y4WvYuGX0.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? Y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'localhost' (ED25519) to the list of known hosts.
+user@localhost's password: 
+text2.txt                                                                                                                                             100%    0     0.0KB/s   00:00    
+text1.txt                                                                                                                                             100%    0     0.0KB/s   00:00    
+
+
+
+--------------------------------------BY USING CP COMMAND-----------------------------------------------------------------------------
+
+
+user@vishal-virtualbox:~/Desktop/networking$ cp -r ~/Desktop/networking/mod1_2/hello ~/Downloads 
+user@vishal-virtualbox:~/Desktop/networking$ ls /home/user/Downloads
+assessment_mod1-5.pptx  hello  mod4  output.txt  pexels-eberhardgross-1624496.jpg
+user@vishal-virtualbox:~/Desktop/networking$ ls /home/user/Downloads/hello
+text1.txt  text2.txt
+

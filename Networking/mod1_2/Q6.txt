@@ -1,0 +1,46 @@
+Q6
+
+VNC Viewer
+To access a remote system using VNC Viewer, first, install the necessary package on Linux using the following command: 
+
+  sudo apt install tightvncserver
+  
+Once the installation is complete, verify it by running: 
+
+  vncserver
+   
+To connect to the remote system, we need to know its IP address and execute the following:
+  vncviewer <ip_addr>
+  
+
+AnyDesk
+
+To remote access a system using AnyDesk, download and install the client on both systems. 
+After installation, use the 9-digit access key from the remote system’s AnyDesk client.
+Enter the access key in AnyDesk on the local system. Once the remote system accepts the request, the connection is established. 
+
+
+TeamViewer
+
+To access a remote system using TeamViewer, download and install TeamViewer on both systems 
+Launch TeamViewer on both systems and note down the TeamViewer ID and Password of the remote system. 
+On the local system, enter the remote system’s TeamViewer ID and click Connect. 
+Once the remote system accepts the request, the remote session is established. 
+
+
+SSH
+
+Install OpenSSH server on the remote system using the following command: 
+
+  sudo apt install -y openssh-server
+
+Start and enable the SSH service using `systemctl`: 
+
+  sudo systemctl enable ssh
+  sudo systemctl start ssh
+  
+Once SSH is enabled, use the following command to securely access the remote system using its IP address: 
+
+  ssh <username>@<ip_addr> 
+  
+

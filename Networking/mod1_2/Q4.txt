@@ -1,0 +1,79 @@
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ ping google.com
+PING google.com (216.58.196.174) 56(84) bytes of data.
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=1 ttl=255 time=5.88 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=2 ttl=255 time=4.05 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=3 ttl=255 time=3.41 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=4 ttl=255 time=4.12 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=5 ttl=255 time=3.75 ms
+^X64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=6 ttl=255 time=5.25 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=7 ttl=255 time=3.76 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=8 ttl=255 time=3.81 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=9 ttl=255 time=3.86 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=10 ttl=255 time=5.11 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=11 ttl=255 time=4.06 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=12 ttl=255 time=6.61 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=13 ttl=255 time=3.59 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=14 ttl=255 time=3.91 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=15 ttl=255 time=3.98 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=16 ttl=255 time=3.43 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=17 ttl=255 time=3.97 ms
+64 bytes from maa03s31-in-f14.1e100.net (216.58.196.174): icmp_seq=18 ttl=255 time=3.29 ms
+^C
+--- google.com ping statistics ---
+18 packets transmitted, 18 received, 0% packet loss, time 17040ms
+rtt min/avg/max/mdev = 3.288/4.212/6.614/0.878 ms
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ ping -c 4 facebook.com
+PING facebook.com (157.240.192.35) 56(84) bytes of data.
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=1 ttl=255 time=3.20 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=2 ttl=255 time=3.74 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=3 ttl=255 time=3.71 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=4 ttl=255 time=3.75 ms
+
+--- facebook.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3008ms
+rtt min/avg/max/mdev = 3.196/3.598/3.750/0.232 ms
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+^C
+--- 192.168.1.1 ping statistics ---
+12 packets transmitted, 0 received, 100% packet loss, time 11293ms
+
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ ping 192.168.0.1
+PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
+64 bytes from 192.168.0.1: icmp_seq=1 ttl=255 time=3.08 ms
+64 bytes from 192.168.0.1: icmp_seq=2 ttl=255 time=3.69 ms
+64 bytes from 192.168.0.1: icmp_seq=3 ttl=255 time=2.79 ms
+64 bytes from 192.168.0.1: icmp_seq=4 ttl=255 time=2.52 ms
+64 bytes from 192.168.0.1: icmp_seq=5 ttl=255 time=2.39 ms
+64 bytes from 192.168.0.1: icmp_seq=6 ttl=255 time=3.72 ms
+^X64 bytes from 192.168.0.1: icmp_seq=7 ttl=255 time=3.60 ms
+^C
+--- 192.168.0.1 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6008ms
+rtt min/avg/max/mdev = 2.385/3.111/3.718/0.524 ms
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ arp -a
+_gateway (10.0.2.2) at 52:55:0a:00:02:02 [ether] on enp0s3
+? (10.0.2.3) at 52:55:0a:00:02:03 [ether] on enp0s3
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fd00::c08b:b6:fca8:247b  prefixlen 64  scopeid 0x0<global>
+        inet6 fd00::a00:27ff:fe68:dd9f  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::a00:27ff:fe68:dd9f  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:68:dd:9f  txqueuelen 1000  (Ethernet)
+        RX packets 43519  bytes 38290222 (38.2 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 21278  bytes 10168848 (10.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 4874  bytes 501827 (501.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4874  bytes 501827 (501.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+user@vishal-virtualbox:~/Desktop/networking/mod1_2$ 
+
