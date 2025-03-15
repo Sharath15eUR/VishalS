@@ -1,0 +1,58 @@
+user@vishal-virtualbox:~$ ip link show
+
+This lists all the available network interfaces on the system. The output showed:
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:68:dd:9f brd ff:ff:ff:ff:ff:ff
+
+ Added an IP address to the Ethernet interface using:
+user@vishal-virtualbox:~$ sudo ip addr add 192.168.1.100/24 dev enp0s3
+
+user@vishal-virtualbox:~$ ip addr show enp0s3
+
+This command displays details about the enp0s3 interface. The output included:
+
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:68:dd:9f brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3
+       valid_lft 77872sec preferred_lft 77872sec
+    inet 192.168.1.100/24 scope global enp0s3
+       valid_lft forever preferred_lft forever
+    inet6 fd00::6f25:c946:3d5b:465e/64 scope global temporary dynamic 
+       valid_lft 86027sec preferred_lft 14027sec
+    inet6 fd00::a00:27ff:fe68:dd9f/64 scope global dynamic mngtmpaddr 
+       valid_lft 86027sec preferred_lft 14027sec
+    inet6 fe80::a00:27ff:fe68:dd9f/64 scope link 
+       valid_lft forever preferred_lft forever
+This means:
+The system already had an IP (10.0.2.15), likely assigned by DHCP.
+The new IP (192.168.1.100) is now manually assigned.
+
+Some interfaces may be down by default. To ensure enp0s3 was up with:
+user@vishal-virtualbox:~$ sudo ip link set enp0s3 up
+user@vishal-virtualbox:~$ ip link show enp0s3
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:68:dd:9f brd ff:ff:ff:ff:ff:ff
+
+
+To allow the system to send packets outside its network,added a default gateway:
+user@vishal-virtualbox:~$ sudo ip route add default via 192.168.1.1 dev enp0s3
+
+
+To check all configured routes, we used:
+user@vishal-virtualbox:~$ ip route show
+default via 192.168.1.1 dev enp0s3 
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15 metric 100 
+192.168.1.0/24 dev enp0s3 proto kernel scope link src 192.168.1.100 
+
+This shows:
+
+Two default gateways:
+192.168.1.1 (manually added)
+10.0.2.2 (assigned via DHCP)
+Network assignments:
+192.168.1.0/24 for enp0s3
+10.0.2.0/24 also using enp0s3 (VirtualBox NAT network)
