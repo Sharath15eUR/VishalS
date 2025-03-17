@@ -1,0 +1,123 @@
+user@vishal-virtualbox:~$ ping -c 4 www.google.com
+PING www.google.com (142.250.182.36) 56(84) bytes of data.
+64 bytes from maa05s19-in-f4.1e100.net (142.250.182.36): icmp_seq=1 ttl=118 time=8.09 ms
+64 bytes from maa05s19-in-f4.1e100.net (142.250.182.36): icmp_seq=2 ttl=118 time=3.43 ms
+64 bytes from maa05s19-in-f4.1e100.net (142.250.182.36): icmp_seq=3 ttl=118 time=3.66 ms
+64 bytes from maa05s19-in-f4.1e100.net (142.250.182.36): icmp_seq=4 ttl=118 time=3.73 ms
+
+--- www.google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3063ms
+rtt min/avg/max/mdev = 3.434/4.726/8.089/1.944 ms
+user@vishal-virtualbox:~$ nslookup www.google.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	www.google.com
+Address: 142.250.182.36
+Name:	www.google.com
+Address: 2404:6800:4007:81a::2004
+
+user@vishal-virtualbox:~$ ping -c 4 www.facebook.com
+PING star-mini.c10r.facebook.com (157.240.192.35) 56(84) bytes of data.
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=1 ttl=57 time=6.45 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=2 ttl=57 time=2.70 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=3 ttl=57 time=2.97 ms
+64 bytes from edge-star-mini-shv-02-maa2.facebook.com (157.240.192.35): icmp_seq=4 ttl=57 time=3.90 ms
+
+--- star-mini.c10r.facebook.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3007ms
+rtt min/avg/max/mdev = 2.702/4.005/6.451/1.479 ms
+user@vishal-virtualbox:~$ nslookup www.facebook.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.facebook.com	canonical name = star-mini.c10r.facebook.com.
+Name:	star-mini.c10r.facebook.com
+Address: 157.240.192.35
+Name:	star-mini.c10r.facebook.com
+Address: 2a03:2880:f137:182:face:b00c:0:25de
+
+user@vishal-virtualbox:~$ ping -c 4 www.amazon.com
+PING d3ag4hukkh62yn.cloudfront.net (108.159.17.235) 56(84) bytes of data.
+64 bytes from server-108-159-17-235.maa51.r.cloudfront.net (108.159.17.235): icmp_seq=1 ttl=249 time=10.3 ms
+64 bytes from server-108-159-17-235.maa51.r.cloudfront.net (108.159.17.235): icmp_seq=2 ttl=249 time=3.79 ms
+64 bytes from server-108-159-17-235.maa51.r.cloudfront.net (108.159.17.235): icmp_seq=3 ttl=249 time=3.99 ms
+64 bytes from server-108-159-17-235.maa51.r.cloudfront.net (108.159.17.235): icmp_seq=4 ttl=249 time=3.13 ms
+
+--- d3ag4hukkh62yn.cloudfront.net ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3016ms
+rtt min/avg/max/mdev = 3.134/5.291/10.251/2.880 ms
+user@vishal-virtualbox:~$ nslookup www.amazon.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.amazon.com	canonical name = tp.47cf2c8c9-frontier.amazon.com.
+tp.47cf2c8c9-frontier.amazon.com	canonical name = d3ag4hukkh62yn.cloudfront.net.
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 108.159.17.235
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:257a:c000:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:257a:6200:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:257a:b000:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:257a:9400:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:257a:8e00:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:257a:6c00:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:257a:5e00:7:49a5:5fd4:b121
+Name:	d3ag4hukkh62yn.cloudfront.net
+Address: 2600:9000:257a:d200:7:49a5:5fd4:b121
+
+user@vishal-virtualbox:~$ ping -c 4 www.github.com
+PING github.com (20.207.73.82) 56(84) bytes of data.
+64 bytes from 20.207.73.82: icmp_seq=1 ttl=115 time=28.7 ms
+64 bytes from 20.207.73.82: icmp_seq=2 ttl=115 time=21.0 ms
+64 bytes from 20.207.73.82: icmp_seq=3 ttl=115 time=21.1 ms
+64 bytes from 20.207.73.82: icmp_seq=4 ttl=115 time=20.8 ms
+
+--- github.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3006ms
+rtt min/avg/max/mdev = 20.835/22.910/28.702/3.344 ms
+user@vishal-virtualbox:~$ nslookup www.github.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.github.com	canonical name = github.com.
+Name:	github.com
+Address: 20.207.73.82
+
+user@vishal-virtualbox:~$ ping -c 4 www.cisco.com
+PING e2867.dsca.akamaiedge.net (23.209.254.61) 56(84) bytes of data.
+64 bytes from a23-209-254-61.deploy.static.akamaitechnologies.com (23.209.254.61): icmp_seq=1 ttl=58 time=14.5 ms
+64 bytes from a23-209-254-61.deploy.static.akamaitechnologies.com (23.209.254.61): icmp_seq=2 ttl=58 time=3.63 ms
+64 bytes from a23-209-254-61.deploy.static.akamaitechnologies.com (23.209.254.61): icmp_seq=3 ttl=58 time=3.34 ms
+64 bytes from a23-209-254-61.deploy.static.akamaitechnologies.com (23.209.254.61): icmp_seq=4 ttl=58 time=2.93 ms
+
+--- e2867.dsca.akamaiedge.net ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 2.928/6.102/14.511/4.861 ms
+user@vishal-virtualbox:~$ nslookup www.cisco.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.cisco.com	canonical name = www.cisco.com.akadns.net.
+www.cisco.com.akadns.net	canonical name = wwwds.cisco.com.edgekey.net.
+wwwds.cisco.com.edgekey.net	canonical name = wwwds.cisco.com.edgekey.net.globalredir.akadns.net.
+wwwds.cisco.com.edgekey.net.globalredir.akadns.net	canonical name = e2867.dsca.akamaiedge.net.
+Name:	e2867.dsca.akamaiedge.net
+Address: 23.209.254.61
+Name:	e2867.dsca.akamaiedge.net
+Address: 2600:140f:3:f93::b33
+Name:	e2867.dsca.akamaiedge.net
+Address: 2600:140f:3:f95::b33
+
+user@vishal-virtualbox:~$ 
