@@ -1,0 +1,44 @@
+1. Child Process – fork()
+fork() is a system call in Unix/Linux used to create a new process.
+The new process is a copy of the parent and is called the child process.
+It returns:
+	0 to the child process
+	Child PID to the parent
+	-1 on failure
+Commonly used in multitasking and multiprocessing.
+
+2. Handling Common Signals
+Signals are asynchronous notifications sent to a process to notify events.
+
+Examples:
+
+	SIGINT – Interrupt (Ctrl+C)
+	SIGTERM – Terminate
+	SIGKILL – Force kill (cannot be caught)
+	SIGSEGV – Segmentation fault
+
+3. Exploring Different Kernel Crashes
+Kernel crashes (often called kernel panics) occur due to:
+	Invalid memory access
+	Null pointer dereference
+	Division by zero
+	Incorrect driver/module code
+
+4. Time Complexity
+Time complexity measures how an algorithm's runtime grows with input size.
+Expressed in Big O notation, e.g.:
+	O(1) – Constant time
+	O(log n) – Binary search
+	O(n) – Linear
+	O(n^2) – Nested loops
+
+5. Locking Mechanism – Mutex / Spinlock
+Mutex (Mutual Exclusion):
+	Used in user space for thread synchronization.
+	Thread blocks/sleeps if lock is unavailable.
+Example: pthread_mutex_lock()
+
+Spinlock:
+	Used in kernel space or low-latency systems.
+	Thread keeps trying (busy-waiting) until lock is free.
+	Lightweight but wastes CPU cycles.
